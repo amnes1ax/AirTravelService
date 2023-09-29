@@ -154,7 +154,9 @@ public class TicketService : ITicketService
             OrderNumber = x.OrderNumber,
             DeparturePoint = x.DeparturePoint,
             DestinationPoint = x.DestinationPoint,
-            IsFinished = x.ArrivalDate >= startDateRange && x.ArrivalDate <= endDateRange
+            IsFinished = x.ArrivalDate >= startDateRange &&
+                         x.ArrivalDate <= endDateRange &&
+                         x.ArrivalDate <= DateTimeOffset.UtcNow
         });
     }
 
@@ -209,6 +211,7 @@ public class TicketService : ITicketService
             var ticket = await _ticketsRepository.FindByIdAsync(ticketId, cancellationToken);
             if (ticket is not null) tickets.Add(ticket);
         }
+
         await _ticketsRepository.DeleteRangeAsync(tickets);
     }
 
