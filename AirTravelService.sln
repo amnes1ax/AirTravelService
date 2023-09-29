@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3E612858-E2F2-44BF-8DCE-93B300870C14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{C669FE43-D6FA-4C3C-B85C-02BD58E4B935}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{149D2618-100A-48FA-B6A6-08A99CEFB3A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTravelService.Api", "src\AirTravelService.Api\AirTravelService.Api.csproj", "{06249D95-492C-49F3-9CFF-00311EDA969A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTravelService.Domain", "src\AirTravelService.Domain\AirTravelService.Domain.csproj", "{9CEF84B9-5FE1-4A54-B171-C13111BF2E20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTravelService.DataAccess", "src\AirTravelService.DataAccess\AirTravelService.DataAccess.csproj", "{BBE58ADE-7FAD-42DC-9016-588FC4535989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTravelService.DataAccess.PostgresSql", "src\AirTravelService.DataAccess.PostgresSql\AirTravelService.DataAccess.PostgresSql.csproj", "{F3862C47-F644-4466-81BA-A2C700D310EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTravelService.Migrator", "src\AirTravelService.Migrator\AirTravelService.Migrator.csproj", "{C54D5C4F-1937-428B-BEEB-E0B453742C77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTravelService.Service", "src\AirTravelService.Service\AirTravelService.Service.csproj", "{5811B796-494E-4C60-A6BE-B906AAF938EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadModel", "ReadModel", "{4F37A1D1-5F3B-4B80-8D15-FFE78FF8E97F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTravelService.ReadModel", "src\AirTravelService.ReadModel\AirTravelService.ReadModel.csproj", "{550C7B41-EFF2-4408-A29D-1FBA8645AF84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTravelService.ReadModel.PostgresSql", "src\AirTravelService.ReadModel.PostgresSql\AirTravelService.ReadModel.PostgresSql.csproj", "{CCD08CA8-8AC0-4596-99A7-752CE18B08E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A566E081-84E1-4D75-A288-9803918E99BA}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C669FE43-D6FA-4C3C-B85C-02BD58E4B935} = {3E612858-E2F2-44BF-8DCE-93B300870C14}
+		{06249D95-492C-49F3-9CFF-00311EDA969A} = {3E612858-E2F2-44BF-8DCE-93B300870C14}
+		{9CEF84B9-5FE1-4A54-B171-C13111BF2E20} = {3E612858-E2F2-44BF-8DCE-93B300870C14}
+		{BBE58ADE-7FAD-42DC-9016-588FC4535989} = {C669FE43-D6FA-4C3C-B85C-02BD58E4B935}
+		{F3862C47-F644-4466-81BA-A2C700D310EF} = {C669FE43-D6FA-4C3C-B85C-02BD58E4B935}
+		{C54D5C4F-1937-428B-BEEB-E0B453742C77} = {3E612858-E2F2-44BF-8DCE-93B300870C14}
+		{5811B796-494E-4C60-A6BE-B906AAF938EE} = {3E612858-E2F2-44BF-8DCE-93B300870C14}
+		{4F37A1D1-5F3B-4B80-8D15-FFE78FF8E97F} = {3E612858-E2F2-44BF-8DCE-93B300870C14}
+		{550C7B41-EFF2-4408-A29D-1FBA8645AF84} = {4F37A1D1-5F3B-4B80-8D15-FFE78FF8E97F}
+		{CCD08CA8-8AC0-4596-99A7-752CE18B08E7} = {4F37A1D1-5F3B-4B80-8D15-FFE78FF8E97F}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06249D95-492C-49F3-9CFF-00311EDA969A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06249D95-492C-49F3-9CFF-00311EDA969A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06249D95-492C-49F3-9CFF-00311EDA969A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06249D95-492C-49F3-9CFF-00311EDA969A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CEF84B9-5FE1-4A54-B171-C13111BF2E20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CEF84B9-5FE1-4A54-B171-C13111BF2E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CEF84B9-5FE1-4A54-B171-C13111BF2E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CEF84B9-5FE1-4A54-B171-C13111BF2E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBE58ADE-7FAD-42DC-9016-588FC4535989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBE58ADE-7FAD-42DC-9016-588FC4535989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBE58ADE-7FAD-42DC-9016-588FC4535989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBE58ADE-7FAD-42DC-9016-588FC4535989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3862C47-F644-4466-81BA-A2C700D310EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3862C47-F644-4466-81BA-A2C700D310EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3862C47-F644-4466-81BA-A2C700D310EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3862C47-F644-4466-81BA-A2C700D310EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C54D5C4F-1937-428B-BEEB-E0B453742C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54D5C4F-1937-428B-BEEB-E0B453742C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54D5C4F-1937-428B-BEEB-E0B453742C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54D5C4F-1937-428B-BEEB-E0B453742C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5811B796-494E-4C60-A6BE-B906AAF938EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5811B796-494E-4C60-A6BE-B906AAF938EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5811B796-494E-4C60-A6BE-B906AAF938EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5811B796-494E-4C60-A6BE-B906AAF938EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{550C7B41-EFF2-4408-A29D-1FBA8645AF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{550C7B41-EFF2-4408-A29D-1FBA8645AF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{550C7B41-EFF2-4408-A29D-1FBA8645AF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{550C7B41-EFF2-4408-A29D-1FBA8645AF84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD08CA8-8AC0-4596-99A7-752CE18B08E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD08CA8-8AC0-4596-99A7-752CE18B08E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD08CA8-8AC0-4596-99A7-752CE18B08E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD08CA8-8AC0-4596-99A7-752CE18B08E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
