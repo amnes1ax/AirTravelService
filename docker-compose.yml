@@ -1,0 +1,45 @@
+﻿services:
+  ts-api:
+    container_name: ts-api
+    environment:
+      ConnectionStrings:main: Host=ts-pg; port=5432; database=travel_service; username=app; password=password;
+      Serilog:WriteTo:0:Name: Console
+      Serilog:WriteTo:0:Args:formatter: Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact
+    build:
+      context: .
+      dockerfile: src/AirTravelService.Api/Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - ts-pg
+      - ts-migrator
+
+  ts-migrator:
+    container_name: ts-migrator
+    environment:
+      ConnectionStrings:postgres: host=ts-pg; port=5432; database=travel_service; username=app; password=password;
+      Serilog:WriteTo:0:Name: Console
+      Serilog:WriteTo:0:Args:formatter: Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact
+    build:
+      context: .
+      dockerfile: src/AirTravelService.Migrator/Dockerfile
+    depends_on:
+      - ts-pg
+
+  ts-pg:
+    container_name: ts-pg
+    image: postgres
+    environment:
+      POSTGRES_MULTIPLE_DATABASES: travel_service
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5454:5432"
+    volumes:
+      - './data:/var/lib/postgresql/data'
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      start_period: 5s
+      interval: 3s
+      retries: 10
+      timeout: 30s
