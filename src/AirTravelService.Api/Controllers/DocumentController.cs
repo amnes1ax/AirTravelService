@@ -3,6 +3,7 @@ using AirTravelService.Service.Exceptions.Documents;
 using AirTravelService.Service.Exceptions.Passengers;
 using AirTravelService.Service.Models.Document;
 using AirTravelService.Service.Services;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AirTravelService.Api.Controllers;
@@ -39,6 +40,10 @@ public partial class DocumentController : ControllerBase
         catch (DocumentAlreadyExistsException ex)
         {
             return Conflict(ex.Message);
+        }
+        catch (DocumentFieldNameNotUniqueException ex)
+        {
+            return UnprocessableEntity(ex.Message);
         }
     }
     

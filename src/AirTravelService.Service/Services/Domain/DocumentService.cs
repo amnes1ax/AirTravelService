@@ -1,4 +1,5 @@
 using AirTravelService.DataAccess.Repositories;
+using AirTravelService.DataAccess.Repositories.Exceptions;
 using AirTravelService.Domain.Entities;
 using AirTravelService.ReadModel;
 using AirTravelService.ReadModel._shared;
@@ -57,7 +58,14 @@ public class DocumentService : IDocumentService
             }).ToList(),
         };
 
-        await _documentsRepository.SaveAsync(document);
+        try
+        {
+            await _documentsRepository.SaveAsync(document);
+        }
+        catch (DocumentFieldWithSameNameAlreadyExistException)
+        {
+            throw new DocumentFieldNameNotUniqueException("Document fields names should be unique");
+        }
     }
 
     public async Task<DocumentReference?> GetByIdAsync(Guid documentId, CancellationToken cancellationToken)

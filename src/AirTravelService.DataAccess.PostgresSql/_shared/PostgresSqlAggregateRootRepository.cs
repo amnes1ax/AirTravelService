@@ -23,8 +23,17 @@ public abstract class PostgresSqlAggregateRootRepository<TAggregateRoot, TAggreg
 
     public virtual async Task SaveAsync(TAggregateRoot aggregateRoot)
     {
-        if (_context.Entry(aggregateRoot).State == EntityState.Detached)
-            await _context.AggregateRoots.AddAsync(aggregateRoot);
+        try
+        {
+            if (_context.Entry(aggregateRoot).State == EntityState.Detached)
+            {
+                await _context.AggregateRoots.AddAsync(aggregateRoot);
+            }
+        }
+        catch (InvalidOperationException ex)
+        {
+            throw new AggregateAddException(ex.Message, ex);
+        }
 
         try
         {
