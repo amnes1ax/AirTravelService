@@ -139,6 +139,15 @@ public class DocumentService : IDocumentService
                 Value = field.Value
             });
         }
+
+        try
+        {
+            await _documentsRepository.SaveAsync(document);
+        }
+        catch (DocumentFieldWithSameNameAlreadyExistException)
+        {
+            throw new DocumentFieldNameNotUniqueException("Document fields names should be unique");
+        }
     }
 
     public async Task DeleteAsync(Guid documentId, CancellationToken cancellationToken)
